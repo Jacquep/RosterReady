@@ -1,18 +1,18 @@
 
 import React from 'react'
-import { Form } from 'semantic-ui-react'
-    	const options = [
-    	  { key: 'm', text: 'Male', value: 'male' },
-    	  { key: 'f', text: 'Female', value: 'female' },
-    	]
+import { Button, Divider, Form, Grid } from 'semantic-ui-react'
 
-class NameForm extends React.Component {
+const massive = ['massive']
+const big = ['big']
+    	
+class PlayerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
     	name: '',
     	phone: '',
     	email: '',
+      username: '',
     	sport: '',
     	gender: '',
     	ready: true,
@@ -34,25 +34,62 @@ class NameForm extends React.Component {
 
   render() {
     const value = this.state.value  
-    return (
-      <Form>
-        <Form.Group widths='equal'>
-          <Form.Input label='First name' placeholder='First name' />
-          <Form.Input label='Last name' placeholder='Last name' />
-          <Form.Select label='Gender' options={options} placeholder='Gender' />
-        </Form.Group>
-        <Form.Group inline>
-          <label>Size</label>
-          <Form.Radio label='Small' value='sm' checked={value === 'sm'} onChange={this.handleChange} />
-          <Form.Radio label='Medium' value='md' checked={value === 'md'} onChange={this.handleChange} />
-          <Form.Radio label='Large' value='lg' checked={value === 'lg'} onChange={this.handleChange} />
-        </Form.Group>
-        <Form.TextArea label='About' placeholder='Tell us more about you...' />
-        <Form.Checkbox label='I agree to the Terms and Conditions' />
-        <Form.Button>Submit</Form.Button>
-      </Form>
-    );
+      return (
+        <div>
+          <Grid.Row>
+            <Grid.Column width={2}>
+              <div>
+                {massive.map(size => (
+                  <Form size={massive} key={massive}>
+                    <Form.Group>
+                      <div>
+                        <Form.Input label='Name' control='input' placeholder='Name' />
+                      </div>
+                    </Form.Group>
+                  </Form>
+                 ))}
+              </div>
+           </Grid.Column>
+        </Grid.Row>
+        <div>
+          {big.map(size => (
+            <Form size={big} key={big}>
+              <Form.Group>
+                <div>
+                  <Form.Input label='Phone' placeholder='Phone' />
+                  <Form.Input label='Email' placeholder='Email' />
+                  <Form.Input label='Username' placeholder='Username' />
+                </div>
+              </Form.Group>
+            </Form>
+          ))}
+        </div>
+            
+        <label>Gender</label>
+        <Form.Radio label='Male' value='male' checked={value === 'male'} onChange={this.handleChange} />
+        <Form.Radio label='Female' value='female' checked={value === 'female'} onChange={this.handleChange} />
+
+        <label>Sport</label>
+        <Form.Radio label='Basketball' value='Basketball' checked={value === 'Basketball'} onChange={this.handleChange} />
+        <Form.Radio label='Baseball' value='Baseball' checked={value === 'Baseball'} onChange={this.handleChange} />
+        <Form.Radio label='Soccer' value='Soccer' checked={value === 'Soccer'} onChange={this.handleChange} />
+        <Form.Radio label='Volleyball' value='Volleyball' checked={value === 'Volleyball'} onChange={this.handleChange} />
+        <Form.Radio label='Football' value='Football' checked={value === 'Football'} onChange={this.handleChange} />
+        <Button.Group>
+        <Button>Ready</Button>
+        <Button.Or />
+        <Button positive>Not Ready</Button>
+        </Button.Group>
+
+        <div>
+          <Button type='submit'>Submit</Button>
+          <Divider hidden />
+        </div>         
+      </div>
+    )
   }
 }
 
-export default NameForm
+
+
+export default PlayerForm
