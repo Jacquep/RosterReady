@@ -3,7 +3,7 @@ import { Menu, Segment } from 'semantic-ui-react'
 
 handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-const Navbar = () => {
+const Footer = () => {
 
   render() {
     const { activeItem } = this.state
@@ -16,4 +16,4 @@ const Navbar = () => {
   )
 }
 
-export default footer
+export default Footer
