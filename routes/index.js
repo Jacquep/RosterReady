@@ -29,4 +29,10 @@ router.post('/updateuser', auth.updateuser);
 // route for update account action
 router.post('/updateteam', auth.updateteam);
 
+// route for update account action
+router.get('/event', auth.event);
+
+// route for update account action
+//router.post('/event', auth.addevent);
+
 module.exports = router;

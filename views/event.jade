@@ -1,3 +1,21 @@
 extends layout
 
 block content
+
+    h1 Hello World
+    div.row(style="background:#fff;")
+        form.form-signin(role='form', action="/event",method="post")
+            h2.form-signin-heading Add Event Form
+            h5 Event Name
+            input.form-control(type='text', name="eventname", placeholder='Event Name')
+            h5 Event Date
+            input.form-control(type='text', name="lname", placeholder='Event Date')
+            h5 Event Location
+            select(name='eventlocation')
+                option(value='San Diego City') San Diego City
+                option(value='North County Coastal') North County Coastal
+                option(value='North County Inland') North County Inland
+                option(value='East County') East County
+                option(value='South Bay') South Bay
+                br
+            button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Create Account

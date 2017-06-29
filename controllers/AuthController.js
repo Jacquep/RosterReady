@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var passport = require("passport");
 var User = require("../models/User");
-var Event = require("../models/Events");
+var Event = require("../models/Event");
 
 var userController = {};
 
@@ -9,6 +9,11 @@ var userController = {};
 userController.home = function(req, res) {
 
   res.render('index', { user : req.user });
+};
+// Event Get Route
+userController.event = function(req, res) {
+
+  res.render('event', { user : req.user });
 };
 
 // Go to registration page
