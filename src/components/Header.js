@@ -3,7 +3,7 @@ import { Button, Menu, Segment } from 'semantic-ui-react'
 
 handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-const Navbar = () => {
+const Header = () => {
 
   render() {
     const { activeItem } = this.state
@@ -26,5 +26,5 @@ const Navbar = () => {
   )
 }
 
-export default navbar
+export default Header
 

@@ -7,8 +7,8 @@ var React = require('react');
 var Game = require('./Game');
 var Player = require('./Player');
 var Team = require('./Team');
-var Player = require('./navbar');
-var Team = require('./footer');
+var Navbar = require('./navbar');
+var Footer = require('./footer');
 
 
 // This is the main component. 
@@ -64,25 +64,22 @@ var Main = React.createClass({
 		return(
 
 			<div className="container">
-
-				<div className="row">
-
-					<Menu/>
-
-				</div>
-
-				<div className="row">
-					
-					<div id="banner" class="col s12 center-align">
-        				<h4>Banner Placeholder</h4>
-    				</div>
-				</div>
-
-				<div className="row">
-
-					<Menu/>
-
-				</div>
+				<nav className="navbar navbar-default" role="navigation">
+					<div className="container-fluid">
+						<div className="navbar-header">
+							<button type="button">
+								<span className="icon-bar"></span>
+								<span className="icon-bar"></span>
+								<span className="icon-bar"></span>
+							</button>
+							<a className="navbar-brand" href="#">RosterReady</a>
+						</div>
+					</div>	
+				</nav>			
+					<div className="jumbotron">
+						<h2 className="text-center"><strong>Banner</strong></h2>
+					</div>
+					{this.props.children}
 			</div>
 		)
 	}
