@@ -72,7 +72,7 @@ var Main = React.createClass({
 				</div>
 
 				<div className="row">
-					<div>
+					
 					<div id="banner" class="col s12 center-align">
         				<h4>Banner Placeholder</h4>
     				</div>
@@ -88,4 +88,4 @@ var Main = React.createClass({
 	}
 });
 
-export default Main g
+export default Main 

@@ -16,7 +16,7 @@ const Navbar = () => {
       <Menu.Item class= 'right item'name='About' active={activeItem === 'About'} onClick={this.handleItemClick} />
       <Menu.Item class= 'right item'name='Contact Us' active={activeItem === 'Contact Us'} onClick={this.handleItemClick} />
       <Menu.Item class= 'right item'>
-        <Button primary>Log-in</Button>
+      <Button primary>Log-in</Button>
       </Menu.Item>
 
       <Menu.Item class= 'right item'>
