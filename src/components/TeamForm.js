@@ -5,13 +5,16 @@ import { Button, Divider, Form, Grid } from 'semantic-ui-react'
 const massive = ['massive']
 const big = ['big']
       
-class GameForm extends React.Component {
+class TeamForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: '',
-      time: '',
-      need: ''
+      teamLeader: '',
+      sport: '',
+      TeamName: '',
+      phone:'',
+      email: ''
+
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,9 +32,8 @@ class GameForm extends React.Component {
 
   render() {
     const value = this.state.value  
-
-      return ()
+      return <h1>TeamForm</h1>
   }
 }
 
-export default GameForm
+export default TeamForm
