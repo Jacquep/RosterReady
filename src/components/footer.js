@@ -1,18 +1,43 @@
 import React from 'react'
-import { Menu, Segment } from 'semantic-ui-react'
+import { Menu, Container } from 'semantic-ui-react'
 
-handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
 const Footer = () => {
-
-  render() {
-    const { activeItem } = this.state
-
   return (
-    <Menu>
+  	<Menu 
+  	style={{width:'100%'}}
+  	fluid
+  	vertical 
+  	fixed='bottom' 
+  	>
 
+      <Menu
+      	attached
+        borderless       
+        size='massive'
+        color='blue'
+  		inverted
 
-    </Menu>
+        
+      >
+        <Container>
+          <Menu.Item header>Links</Menu.Item>
+          <Menu.Item name='aboutUs'>About</Menu.Item>
+          <Menu.Item name='contactUs'>Contact Us</Menu.Item>
+          <Menu.Item name='dashboard'>My Dashboard</Menu.Item>
+        </Container>
+      </Menu>
+      <Menu
+      	attached     	
+        borderless
+        size='massive'
+        color='blue'
+  		inverted
+      >
+
+      </Menu>
+      </Menu>
+
   )
 }
 

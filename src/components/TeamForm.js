@@ -32,7 +32,7 @@ class TeamForm extends React.Component {
 
   render() {
     const value = this.state.value  
-      return()
+      return <h1>TeamForm</h1>
   }
 }
 

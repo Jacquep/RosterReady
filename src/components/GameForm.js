@@ -1,36 +1,36 @@
 
 import React from 'react'
-import { Button, Divider, Form, Grid } from 'semantic-ui-react'
+// import { Button, Divider, Form, Grid } from 'semantic-ui-react'
 
-const massive = ['massive']
-const big = ['big']
+// const massive = ['massive']
+// const big = ['big']
       
 class GameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: '',
-      time: '',
-      need: ''
-    };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     date: '',
+  //     time: '',
+  //     need: ''
+  //   };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  //   this.handleChange = this.handleChange.bind(this);
+  //   this.handleSubmit = this.handleSubmit.bind(this);
+  // }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+  // handleChange(event) {
+  //   this.setState({value: event.target.value});
+  // }
 
-  handleSubmit(event) {
+  // handleSubmit(event) {
     
-    event.preventDefault();
-  }
+  //   event.preventDefault();
+  // }
 
   render() {
-    const value = this.state.value  
+    // const value = this.state.value  
 
-      return ()
+      return (<h1>GameForm</h1>)
   }
 }
 

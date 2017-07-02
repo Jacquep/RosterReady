@@ -1,29 +1,31 @@
 import React from 'react'
-import { Button, Menu, Segment } from 'semantic-ui-react'
+import { Menu, Button, Container } from 'semantic-ui-react'
 
-handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+class Header extends React.Component {
+  state = {}
 
-const Header = () => {
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
     const { activeItem } = this.state
 
-  return (
-    <Menu>
-
-
-      <Menu.Item class= 'right item'name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-      <Menu.Item class= 'right item'name='About' active={activeItem === 'About'} onClick={this.handleItemClick} />
-      <Menu.Item class= 'right item'name='Contact Us' active={activeItem === 'Contact Us'} onClick={this.handleItemClick} />
-      <Menu.Item class= 'right item'>
-      <Button primary>Log-in</Button>
-      </Menu.Item>
-
-      <Menu.Item class= 'right item'>
-        <Button primary>Sign up</Button>
-      </Menu.Item>
-    </Menu>
-  )
+    return (
+      <Menu
+        borderless
+        inverted
+        color='blue'
+        size='huge'
+      >
+        <Container>
+          <Menu.Item header>Our Company</Menu.Item>
+          <Menu.Item name='aboutUs' active={activeItem === 'aboutUs'} onClick={this.handleItemClick} />
+          <Menu.Item name='jobs' active={activeItem === 'jobs'} onClick={this.handleItemClick} />
+          <Menu.Item name='locations' active={activeItem === 'locations'} onClick={this.handleItemClick} />
+          <Menu.Item position='right'><Button color='teal'>Sign In</Button></Menu.Item>
+        </Container>
+      </Menu>
+    )
+  }
 }
 
 export default Header
