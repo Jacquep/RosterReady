@@ -1,20 +1,14 @@
 import React from 'react'
-// import { Grid, Image } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 
-const Banner = () => ( <h1>Banner</h1> )
-  // <Grid celled>
-  // 
-// 
-    // <Grid.Row>
-      // <Grid.Column width={3}>
-        // <Image src='/assets/images/wireframe/image.png' />
-      // </Grid.Column>
-      // <Grid.Column width={10}>
-        // <Image src='/assets/images/wireframe/paragraph.png' />
-      // </Grid.Column>
-     // 
-    // </Grid.Row>
-  // </Grid>
-// )
+const Banner = () => (
+	<Segment
+		style={{
+			width:'100%',
+			height:'50vh'
+		}} 
+		
+	/> 
+)
 
 export default Banner
