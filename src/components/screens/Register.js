@@ -1,9 +1,9 @@
 // Include React 
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 import Header from '../Header'
-import GameForm from '../GameForm'
+//import GameForm from '../GameForm'
 import PlayerForm from '../PlayerForm'
 import TeamForm from '../TeamForm'
 import Footer from '../Footer'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 import Header from '../Header'
 import UserCard from '../UserCard'
@@ -8,7 +8,7 @@ import GameForm from '../GameForm'
 import Footer from '../Footer'
 
 
-const PlayerDashboard = () => (
+const TeamDashboard = () => (
 	<div>
 		<Header />
 		<Link to='/'>Home</Link>
@@ -19,4 +19,4 @@ const PlayerDashboard = () => (
 	</div>
 )
 
-export default PlayerDashboard
+export default TeamDashboard
