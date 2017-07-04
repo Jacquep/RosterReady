@@ -16,7 +16,8 @@ class Register extends React.Component {
 	// Here we render the function
 	render(){
 		return (
-			<div>
+
+      	<div>
 				<Header />
 				<Link to='/player'>Player Dashboard</Link>
 				<Link to='/team'>Team Dashboard</Link>
@@ -25,6 +26,7 @@ class Register extends React.Component {
 				<TeamForm />
 				<Footer />
 			</div>
+		
 		)
 	}
 };

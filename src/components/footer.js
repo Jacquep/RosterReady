@@ -5,10 +5,8 @@ import { Menu, Container } from 'semantic-ui-react'
 const Footer = () => {
   return (
   	<Menu 
-  	style={{width:'100%'}}
-  	fluid
-  	vertical 
-  	fixed='bottom' 
+  	  style={{width:'100%'}}
+  	  vertical 
   	>
 
       <Menu
@@ -16,9 +14,7 @@ const Footer = () => {
         borderless       
         size='massive'
         color='blue'
-  		inverted
-
-        
+  		  inverted
       >
         <Container>
           <Menu.Item header>Links</Menu.Item>
@@ -32,11 +28,11 @@ const Footer = () => {
         borderless
         size='massive'
         color='blue'
-  		inverted
+  		  inverted
       >
 
       </Menu>
-      </Menu>
+    </Menu>
 
   )
 }

@@ -2,8 +2,6 @@
 import React from 'react'
 import { Button, Divider, Form, Grid } from 'semantic-ui-react'
 
-const massive = ['massive']
-const big = ['big']
       
 class TeamForm extends React.Component {
   constructor(props) {

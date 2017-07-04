@@ -34,25 +34,19 @@ class PlayerForm extends React.Component {
 
   render() {
     const value = this.state.value  
-      return ( <h1>PlayerForm</h1> )
-       
-        <div>
-          <Grid.Row>
-            <Grid.Column width={2}>
-              <div>
-                {massive.map(size => (
-                  <Form size={massive} key={massive}>
-                    <Form.Group>
-                      <div>
-                        <Form.Input label='Name' control='input' placeholder='Name' />
-                      </div>
-                    </Form.Group>
-                  </Form>
-                 ))}
-              </div>
-        
 
-            
+      return (
+        <Grid>
+          <Grid.Row>
+            <Grid.Column>
+              <Form size='massive'>
+                <Form.Group>
+                  <Form.Input label='Name' control='input' placeholder='Name' />
+                </Form.Group>
+              </Form>
+           </Grid.Column>
+        </Grid.Row>
+
         <div>
           {big.map(size => (
             <Form size={big} key={big}>
@@ -86,8 +80,10 @@ class PlayerForm extends React.Component {
         <div>
           <Button type='submit'>Submit</Button>
           <Divider hidden />
-        </div>   
-      </div>     
+        </div>         
+      </Grid>
+    )
+
   }
 }
 
