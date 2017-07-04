@@ -1,86 +1,52 @@
-
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Divider, Form, Grid } from 'semantic-ui-react'
 
-const massive = ['massive']
-const big = ['big']
       
 class PlayerForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      phone: '',
-      email: '',
-      username: '',
-      sport: '',
-      gender: '',
-      ready: true,
+  state = {}
 
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    
-    event.preventDefault();
-  }
+  handleChange = (e, { value }) => this.setState({ value })
 
   render() {
-    const value = this.state.value  
-      return (
-        <Grid>
-          <Grid.Row>
-            <Grid.Column>
-              <Form size='massive'>
-                <Form.Group>
-                  <Form.Input label='Name' control='input' placeholder='Name' />
-                </Form.Group>
-              </Form>
-           </Grid.Column>
-        </Grid.Row>
+    const { value } = this.state
 
-        <div>
-          {big.map(size => (
-            <Form size={big} key={big}>
-              <Form.Group>
-                <div>
-                  <Form.Input label='Phone' placeholder='Phone' />
-                  <Form.Input label='Email' placeholder='Email' />
-                  <Form.Input label='Username' placeholder='Username' />
-                </div>
-              </Form.Group>
-            </Form>
-          ))}
-        </div>
-            
-        <label>Gender</label>
-        <Form.Radio label='Male' value='male' checked={value === 'male'} onChange={this.handleChange} />
-        <Form.Radio label='Female' value='female' checked={value === 'female'} onChange={this.handleChange} />
+    return (
+      <Form style={{width: '50%', margin: 'auto'}}>
+        <Form.Input label='Name' control='input' placeholder='Name' />     
+        <Form.Input label='Phone' placeholder='Phone' />
+        <Form.Input label='Email' placeholder='Email' />
+        <Form.Input label='Username' placeholder='Username' />
 
-        <label>Sport</label>
-        <Form.Radio label='Basketball' value='Basketball' checked={value === 'Basketball'} onChange={this.handleChange} />
-        <Form.Radio label='Baseball' value='Baseball' checked={value === 'Baseball'} onChange={this.handleChange} />
-        <Form.Radio label='Soccer' value='Soccer' checked={value === 'Soccer'} onChange={this.handleChange} />
-        <Form.Radio label='Volleyball' value='Volleyball' checked={value === 'Volleyball'} onChange={this.handleChange} />
-        <Form.Radio label='Football' value='Football' checked={value === 'Football'} onChange={this.handleChange} />
+        <Form.Group>
+          <label>Gender</label>
+          <Form.Radio label='Male' value='male' checked={value === 'male'} onChange={this.handleChange} />
+          <Form.Radio label='Female' value='female' checked={value === 'female'} onChange={this.handleChange} />
+        </Form.Group>
+
+        <Form.Group>
+          <label>Sport</label>
+          <Form.Radio label='Basketball' value='Basketball' checked={value === 'Basketball'} onChange={this.handleChange} />
+          <Form.Radio label='Baseball' value='Baseball' checked={value === 'Baseball'} onChange={this.handleChange} />
+          <Form.Radio label='Soccer' value='Soccer' checked={value === 'Soccer'} onChange={this.handleChange} />
+          <Form.Radio label='Volleyball' value='Volleyball' checked={value === 'Volleyball'} onChange={this.handleChange} />
+          <Form.Radio label='Football' value='Football' checked={value === 'Football'} onChange={this.handleChange} />
+        </Form.Group>
+
         <Button.Group>
-        <Button>Ready</Button>
-        <Button.Or />
-        <Button positive>Not Ready</Button>
+          <Button>Ready</Button>
+          <Button.Or />
+          <Button positive>Not Ready</Button>
         </Button.Group>
 
-        <div>
-          <Button type='submit'>Submit</Button>
-          <Divider hidden />
-        </div>         
-      </Grid>
+        <Divider hidden />
+        
+        <Form.Group>
+          <Link to='/PlayerDashboard'>
+            <Button type='submit'>Submit</Button>
+          </Link>
+        </Form.Group>
+      </Form>
     )
   }
 }

@@ -97,7 +97,6 @@ const PlayerDashboard = () => (
 	}}>
 		<PageHeader />
 		<Container style={{flex: 1}}>
-			<Link to='/'>Home</Link>
 			<Grid>
 				<Grid.Row>
 					<Grid.Column width={6}>			

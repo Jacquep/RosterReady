@@ -88,8 +88,6 @@ const mockTeams = [1,2,3,4,5,6,7,8,9,10].map(num => {
 })
 
 
-
-
 const TeamDashboard = () => (
 
 	<div style={{
@@ -99,7 +97,6 @@ const TeamDashboard = () => (
 	}}>
 		<PageHeader />
 		<Container style={{flex: 1}}>
-			<Link to='/'>Home</Link>
 			<Grid>
 				<Grid.Row>
 					<Grid.Column width={6}>			
