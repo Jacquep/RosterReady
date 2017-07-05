@@ -14,24 +14,24 @@ class PlayerForm extends React.Component {
 
     return (
       <Form style={{width: '50%', margin: 'auto'}}>
-        <Form.Input label='Name' control='input' placeholder='Name' />     
-        <Form.Input label='Phone' placeholder='Phone' />
-        <Form.Input label='Email' placeholder='Email' />
-        <Form.Input label='Username' placeholder='Username' />
+        <Form.Input name='Name' label='Name' control='input' placeholder='Name' />     
+        <Form.Input name='Phone' label='Phone' placeholder='Phone' />
+        <Form.Input name='Email' label='Email' placeholder='Email' />
+        <Form.Input name='Username' label='Username' placeholder='Username' />
 
         <Form.Group>
           <label>Gender</label>
-          <Form.Radio label='Male' value='male' checked={value === 'male'} onChange={this.handleChange} />
-          <Form.Radio label='Female' value='female' checked={value === 'female'} onChange={this.handleChange} />
+          <Form.Radio name='Male' label='Male' value='male' checked={value === 'male'} onChange={this.handleChange} />
+          <Form.Radio name='Female' label='Female' value='female' checked={value === 'female'} onChange={this.handleChange} />
         </Form.Group>
 
         <Form.Group>
           <label>Sport</label>
-          <Form.Radio label='Basketball' value='Basketball' checked={value === 'Basketball'} onChange={this.handleChange} />
-          <Form.Radio label='Baseball' value='Baseball' checked={value === 'Baseball'} onChange={this.handleChange} />
-          <Form.Radio label='Soccer' value='Soccer' checked={value === 'Soccer'} onChange={this.handleChange} />
-          <Form.Radio label='Volleyball' value='Volleyball' checked={value === 'Volleyball'} onChange={this.handleChange} />
-          <Form.Radio label='Football' value='Football' checked={value === 'Football'} onChange={this.handleChange} />
+          <Form.Radio name='Basketball' label='Basketball' value='Basketball' checked={value === 'Basketball'} onChange={this.handleChange} />
+          <Form.Radio name='Softball' label='Baseball' value='Baseball' checked={value === 'Baseball'} onChange={this.handleChange} />
+          <Form.Radio name='Soccer' label='Soccer' value='Soccer' checked={value === 'Soccer'} onChange={this.handleChange} />
+          <Form.Radio name='Volleyball' label='Volleyball' value='Volleyball' checked={value === 'Volleyball'} onChange={this.handleChange} />
+          <Form.Radio name='Football' label='Football' value='Football' checked={value === 'Football'} onChange={this.handleChange} />
         </Form.Group>
 
         <Button.Group>
@@ -41,7 +41,7 @@ class PlayerForm extends React.Component {
         </Button.Group>
 
         <Divider hidden />
-        
+
         <Form.Group>
           <Link to='/PlayerDashboard'>
             <Button type='submit'>Submit</Button>

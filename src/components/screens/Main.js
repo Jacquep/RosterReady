@@ -158,6 +158,11 @@ class Main extends React.Component {
 			gameLoading = false
 		}
 
+		let playerLoading = true
+		if (players.length !== 0) {
+			playerLoading = false
+		}
+
 		return (
 			<div>
 				<PageHeader />
@@ -177,7 +182,7 @@ class Main extends React.Component {
 							<GameTable games={games}/>
 						</Grid.Row>
 						<Grid.Row>
-							<Dimmer active inverted>
+							<Dimmer active={playerLoading} inverted>
 								<Loader>Loading</Loader>
 							</Dimmer>
 
