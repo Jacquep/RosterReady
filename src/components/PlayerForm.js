@@ -1,23 +1,42 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Divider, Form, Grid } from 'semantic-ui-react'
-
+import API from '../utils/API'
       
 class PlayerForm extends React.Component {
+
+ //handling text input 
+ constructor() {
+    super();
+    this.state = {
+      inputValue: ""
+    }; 
+     // Binding handleChange and handleButtonClick since we'll be passing them as
+    // callbacks and 'this' will change otherwise
+    this.handleChange = this.handleChange.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+  }
+
   state = {}
 
   handleChange = (e, { value }) => this.setState({ value })
-
+ 
+ //
+  handleButtonClick() {
+    const newPlayer = this.state.inputValue;
+    API.savePlayer(newPlayer).then(this.props.getPlayer);
+    this.setState({ inputValue: "" });
+  }
   render() {
 
     const { value } = this.state
 
     return (
       <Form style={{width: '50%', margin: 'auto'}}>
-        <Form.Input name='Name' label='Name' control='input' placeholder='Name' />     
-        <Form.Input name='Phone' label='Phone' placeholder='Phone' />
-        <Form.Input name='Email' label='Email' placeholder='Email' />
-        <Form.Input name='Username' label='Username' placeholder='Username' />
+        <Form.Input name='Name' label='Name' control='input' placeholder='Name' onChange={this.handleChange} value={this.state.inputValue}/>     
+        <Form.Input name='Phone' label='Phone' placeholder='Phone' onChange={this.handleChange} value={this.state.inputValue} />
+        <Form.Input name='Email' label='Email' placeholder='Email' onChange={this.handleChange} value={this.state.inputValue}/>
+        <Form.Input name='Username' label='Username' placeholder='Username' onChange={this.handleChange} value={this.state.inputValue}/>
 
         <Form.Group>
           <label>Gender</label>
