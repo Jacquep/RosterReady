@@ -2,7 +2,7 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom'
-import { Container, Grid, Header, Segment } from 'semantic-ui-react'
+import { Container, Grid, Header, Segment, Dimmer, Loader } from 'semantic-ui-react'
 
 
 import PageHeader from '../Header'
@@ -92,30 +92,99 @@ const mockPlayers = [1,2,3,4,5,6,7,8,9,10].map(num => {
 
 // This is the main component. 
 class Main extends React.Component {
+	constructor(props){
+		super(props)
+
+		this.state = {
+			games: [],
+			players: []
+		}
+	}
+
+	componentDidMount(){
+		// get games data
+		fetch('./events')
+		// convert response to json
+		.then((response) => response.json())
+		// set state with games data 
+		.then((json) => {
+			// change state to new game data
+			this.setState((prevState, props) => {
+				return {
+					games: json.games,
+				}
+			})
+		})
+		.catch((err) => {
+			// change state to new game data
+			this.setState((prevState, props) => {
+				return {
+					games: mockGames,
+				}
+			})
+		})
+		// get players data
+		fetch('./players')
+		// convert response to json
+		.then((response) => response.json())
+		// set state with games data 
+		.then((json) => {
+			// change state to new game data
+			this.setState((prevState, props) => {
+				return {
+					players: json.players,
+				}
+			})
+		})
+		.catch((err) => {
+			// change state to new game data
+			this.setState((prevState, props) => {
+				return {
+					players: mockPlayers,
+				}
+			})
+		})
+	}
 
 
 	// Here we render the function
 	render(){
+		
+		const games = this.state.games
+		const players = this.state.players
+
+		let gameLoading = true
+		if (games.length !== 0) {
+			gameLoading = false
+		}
+
 		return (
 			<div>
 				<PageHeader />
 				<Container>
-					<Link to='/register'>Sign Up</Link>
 					<Grid>
 						<Grid.Row>
 							<Banner />
 						</Grid.Row>
 						<Grid.Row>
+							<Dimmer active={gameLoading} inverted>
+								<Loader>Loading</Loader>
+							</Dimmer>
+
 							<Header style={{width: '100%'}} size='huge' textAlign='center'>
 								Find a Game
 							</Header>
-							<GameTable games={mockGames}/>
+							<GameTable games={games}/>
 						</Grid.Row>
 						<Grid.Row>
+							<Dimmer active inverted>
+								<Loader>Loading</Loader>
+							</Dimmer>
+
 							<Header style={{width: '100%'}} size='huge' textAlign='center'>
 								Fill Your Roster
 							</Header>
-							<PlayerList players={mockPlayers}/>
+							<PlayerList players={players}/>
 						</Grid.Row>
 					</Grid>
 				</Container>
