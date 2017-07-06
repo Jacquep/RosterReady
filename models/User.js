@@ -31,7 +31,9 @@ var UserSchema = new Schema({
     teamcat: {type : String,
                default: 'none'},
     location: {type : String,
-               default: 'San Diego City'}           
+               default: 'San Diego City'},
+    picurl: {type : String,
+             defualt: 'images/avatar.png'}           
 
 });
 

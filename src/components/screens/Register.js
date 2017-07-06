@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 import { Container } from 'semantic-ui-react'
 
 import Header from '../Header'
-import GameForm from '../GameForm'
+//import GameForm from '../GameForm'
 import PlayerForm from '../PlayerForm'
 import TeamForm from '../TeamForm'
 import Footer from '../Footer'
+// import API from "../utils/API"
 
 
 // This is the main component. 
@@ -26,6 +27,7 @@ class Register extends React.Component {
 
 
 		return (
+
 			<div style={{
 				minHeight: '100vh',
 				display: 'flex',
@@ -40,6 +42,7 @@ class Register extends React.Component {
 				</Container>
 				<Footer />
 			</div>
+		
 		)
 	}
 };

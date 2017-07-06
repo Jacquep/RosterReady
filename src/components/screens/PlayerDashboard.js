@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Grid, Container, Header } from 'semantic-ui-react'
 
+
 import PageHeader from '../Header'
 import PlayerCard from '../PlayerCard'
 import GameTable from '../GameTable'

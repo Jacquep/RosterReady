@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Divider, Form, Grid } from 'semantic-ui-react'
-
+import API from '../utils/API'
       
 class PlayerForm extends React.Component {
+
   constructor(props) {
     super(props)
 
@@ -38,6 +39,8 @@ class PlayerForm extends React.Component {
         <Form.Input value={email} name='Email' label='Email' placeholder='Email' />
         <Form.Input value={username} name='Username' label='Username' placeholder='Username' />
 
+
+
         <Form.Group>
           <label>Gender</label>
           <Form.Radio name='gender' label='Male' value='male' checked={gender === 'male'} onChange={this.handleChange} />
@@ -60,6 +63,7 @@ class PlayerForm extends React.Component {
         <Form.Button content='Submit' />
       </Form>
     )
+
   }
 }
 

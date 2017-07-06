@@ -1,7 +1,9 @@
 // Include React 
 import React from 'react'
+
 import { Link } from 'react-router-dom'
 import { Container, Grid, Header, Segment, Dimmer, Loader } from 'semantic-ui-react'
+
 
 import PageHeader from '../Header'
 import Banner from '../Banner'
