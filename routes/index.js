@@ -29,9 +29,12 @@ router.post('/updateuser', auth.updateuser);
 router.post('/updateteam', auth.updateteam);
 
 // route for update account action
-router.get('/events', auth.event);
+//router.get('/events', auth.event);
 
 // route for update account action
 //router.post('/event', auth.addevent);
+
+// route for React Test
+//router.get('/react', auth.react);
 
 module.exports = router;
