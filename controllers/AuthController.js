@@ -1,3 +1,4 @@
+
 var mongoose = require("mongoose");
 var passport = require("passport");
 var User = require("../models/User");
@@ -170,4 +171,9 @@ userController.updateteam = function(req, res) {
   
 };
 
+// // To React Test page
+// userController.react = function(req, res) {
+
+//   res.render('react', { user : req.user });
+// };
 module.exports = userController;

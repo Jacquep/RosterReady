@@ -21,8 +21,13 @@ var PORT = process.env.PORT || 8080;
 
 var app = express();
 
+//Kayla modified this code below here===============
 
+//required schemas
+var User = require('./models/User');
+var Event = require('./models/Event');
 
+//==============
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 

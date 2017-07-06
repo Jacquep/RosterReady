@@ -1,6 +1,6 @@
 // //this topper is kayla trying to make it work, accept it for now
 // import React from "react";
-// import { Route, IndexRoute, Router, browserHistory } from "react-router";
+
 // import { Form } from 'semantic-ui-react';
 
 // // Include the Main React Dependencies
@@ -9,17 +9,20 @@
 // //cut below here
 
 
-//ReactDOM.render(routes, document.getElementById("app"));
+import React from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
-import React from 'react'
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom'
+//import { Route, Indexroute, Router, browserHistory } from "react-router";
+//import ReactDOM from "react-dom";
+//import routes from "./config/routes"
+ //ReactDOM.render(routes, document.getElementById("App"));
+
+
 import Main from './components/screens/Main'
 import Register from './components/screens/Register'
 import PlayerDashboard from './components/screens/PlayerDashboard'
 import TeamDashboard from './components/screens/TeamDashboard'
+
 
 class App extends React.Component {
   render() {
