@@ -9,7 +9,7 @@
 // //cut below here
 
 
-ReactDOM.render(routes, document.getElementById("app"));
+//ReactDOM.render(routes, document.getElementById("app"));
 
 import React from 'react'
 import {
