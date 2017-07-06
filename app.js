@@ -24,8 +24,8 @@ var app = express();
 //Kayla modified this code below here===============
 
 //required schemas
-//var User = require('./models/User');
-//var Event = require('./models/Event');
+var User = require('./models/User');
+var Event = require('./models/Event');
 
 //==============
 // view engine setup
