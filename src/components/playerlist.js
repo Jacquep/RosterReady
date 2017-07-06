@@ -1,20 +1,10 @@
 import React from 'react'
-import { Grid, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
+import PlayerListItem from './PlayerListItem'
 
-const GridExampleCelled = () => (
-  <Grid celled>
-  
-
-    <Grid.Row>
-      <Grid.Column width={3}>
-        <Image src='/assets/images/wireframe/image.png' />
-      </Grid.Column>
-      <Grid.Column width={10}>
-        <Image src='/assets/images/wireframe/paragraph.png' />
-      </Grid.Column>
-     
-    </Grid.Row>
-  </Grid>
+const PlayerList = (props) => (
+	<Card.Group itemsPerRow={10}>
+		{props.players.map(player => <PlayerListItem player={player}/>)}
+	</Card.Group>
 )
-
-export default GridExampleCelled
+export default PlayerList
