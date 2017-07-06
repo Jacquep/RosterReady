@@ -4,48 +4,60 @@ import { Button, Divider, Form, Grid } from 'semantic-ui-react'
 
       
 class PlayerForm extends React.Component {
-  state = {}
+  constructor(props) {
+    super(props)
 
-  handleChange = (e, { value }) => this.setState({ value })
+    this.state = {
+      name: 'rre-',
+      phone: '',
+      email: '',
+      username: '',
+      gender: '',
+      sport: '',
+      ready: true,
+    }
+  }
+
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
+  
 
   render() {
-    const { value } = this.state
+    
+    const name = this.state.name
+    const phone = this.state.phone
+    const email = this.state.email
+    const username = this.state.username
+    const gender = this.state.gender
+    const sport = this.state.sport
+   
 
     return (
-      <Form style={{width: '50%', margin: 'auto'}}>
-        <Form.Input name='Name' label='Name' control='input' placeholder='Name' />     
-        <Form.Input name='Phone' label='Phone' placeholder='Phone' />
-        <Form.Input name='Email' label='Email' placeholder='Email' />
-        <Form.Input name='Username' label='Username' placeholder='Username' />
+      <Form onSubmit={this.handleSubmit} style={{width: '50%', margin: 'auto'}}>
+        <Form.Input value={name} name='Name' label='Name' control='input' placeholder='Name' />     
+        <Form.Input value={phone} name='Phone' label='Phone' placeholder='Phone' />
+        <Form.Input value={email} name='Email' label='Email' placeholder='Email' />
+        <Form.Input value={username} name='Username' label='Username' placeholder='Username' />
 
         <Form.Group>
           <label>Gender</label>
-          <Form.Radio name='Male' label='Male' value='male' checked={value === 'male'} onChange={this.handleChange} />
-          <Form.Radio name='Female' label='Female' value='female' checked={value === 'female'} onChange={this.handleChange} />
+          <Form.Radio name='gender' label='Male' value='male' checked={gender === 'male'} onChange={this.handleChange} />
+          <Form.Radio name='gender' label='Female' value='female' checked={gender === 'female'} onChange={this.handleChange} />
         </Form.Group>
 
         <Form.Group>
           <label>Sport</label>
-          <Form.Radio name='Basketball' label='Basketball' value='Basketball' checked={value === 'Basketball'} onChange={this.handleChange} />
-          <Form.Radio name='Softball' label='Baseball' value='Baseball' checked={value === 'Baseball'} onChange={this.handleChange} />
-          <Form.Radio name='Soccer' label='Soccer' value='Soccer' checked={value === 'Soccer'} onChange={this.handleChange} />
-          <Form.Radio name='Volleyball' label='Volleyball' value='Volleyball' checked={value === 'Volleyball'} onChange={this.handleChange} />
-          <Form.Radio name='Football' label='Football' value='Football' checked={value === 'Football'} onChange={this.handleChange} />
+          <Form.Radio name='sport' label='Basketball' value='Basketball' checked={sport === 'Basketball'} onChange={this.handleChange} />
+          <Form.Radio name='sport' label='Baseball' value='Baseball' checked={sport === 'Baseball'} onChange={this.handleChange} />
+          <Form.Radio name='sport' label='Soccer' value='Soccer' checked={sport === 'Soccer'} onChange={this.handleChange} />
+          <Form.Radio name='sport' label='Volleyball' value='Volleyball' checked={sport === 'Volleyball'} onChange={this.handleChange} />
+          <Form.Radio name='sport' label='Football' value='Football' checked={sport === 'Football'} onChange={this.handleChange} />
         </Form.Group>
 
-        <Button.Group>
-          <Button>Ready</Button>
-          <Button.Or />
-          <Button positive>Not Ready</Button>
-        </Button.Group>
+       
 
         <Divider hidden />
 
-        <Form.Group>
-          <Link to='/PlayerDashboard'>
-            <Button type='submit'>Submit</Button>
-          </Link>
-        </Form.Group>
+        <Form.Button content='Submit' />
       </Form>
     )
   }

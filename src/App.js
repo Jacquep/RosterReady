@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
+
 import Main from './components/screens/Main'
 import Register from './components/screens/Register'
 import PlayerDashboard from './components/screens/PlayerDashboard'
