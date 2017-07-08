@@ -54,24 +54,6 @@ const mockGames = [
 		teamName:'mockInfo',
 		contact:'mockInfo',
 	},
-	{
-		date:'mockInfo',
-		time:'mockInfo',
-		sport:'mockInfo',
-		rosterNeeds:'mockInfo',
-		location:'mockInfo',
-		teamName:'mockInfo',
-		contact:'mockInfo',
-	},
-	{
-		date:'mockInfo',
-		time:'mockInfo',
-		sport:'mockInfo',
-		rosterNeeds:'mockInfo',
-		location:'mockInfo',
-		teamName:'mockInfo',
-		contact:'mockInfo',
-	},
 ]
 
 const mockTeams = [1,2,3,4,5,6,7,8,9,10].map(num => {
@@ -83,7 +65,7 @@ const mockTeams = [1,2,3,4,5,6,7,8,9,10].map(num => {
 		sport: 'Volleyball',
 		gender: '',
 		ready: true,
-		avatar: `https://react.semantic-ui.com/assets/images/avatar/large/matthew.png`
+		avatar: `./images/vollyball.png`
 	}
 })
 
@@ -106,9 +88,9 @@ const TeamDashboard = () => (
 						<TeamCard team={mockTeams[0]}/>
 					</Grid.Column>			
 					<Grid.Column width={10}>
-						<Header style={{width: '100%'}} size='huge' textAlign='center'>Your Games</Header>
+						<Header style={{width: '100%'}} size='huge' textAlign='center'>Current Requests for Subs</Header>
 						<GameTable games={mockGames}/>
-						<Header style={{width: '100%'}} size='huge' textAlign='center'>Add Game</Header>
+						<Header style={{width: '100%'}} size='huge' textAlign='center'>Add Request</Header>
 						<GameForm />
 					</Grid.Column>
 				</Grid.Row>

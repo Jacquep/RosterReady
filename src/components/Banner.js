@@ -1,15 +1,9 @@
 import React from 'react'
-import { Segment } from 'semantic-ui-react'
+import { Segment, Image } from 'semantic-ui-react'
 
 const Banner = () => ( 
-	<Segment
-		tertiary
-		style={{
-			width:'100%',
-			height:'50vh'
-		}}
-	>
-    	Banner     
-	</Segment> )
+	<Image src='./images/sports-pattern.jpg' fluid />
+
+	 )
 
 export default Banner

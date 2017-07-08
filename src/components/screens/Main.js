@@ -2,7 +2,7 @@
 import React from 'react'
 
 // import { Link } from 'react-router-dom'
-import { Container, Grid, Header, Dimmer, Loader } from 'semantic-ui-react'
+import { Container, Divider, Grid, Header, Dimmer, Loader } from 'semantic-ui-react'
 
 
 import PageHeader from '../Header'
@@ -166,10 +166,11 @@ class Main extends React.Component {
 		return (
 			<div>
 				<PageHeader />
+				<Banner />
 				<Container>
 					<Grid>
 						<Grid.Row>
-							<Banner />
+							
 						</Grid.Row>
 						<Grid.Row>
 							<Dimmer active={gameLoading} inverted>
@@ -177,8 +178,10 @@ class Main extends React.Component {
 							</Dimmer>
 
 							<Header style={{width: '100%'}} size='huge' textAlign='center'>
-								Find a Game
+								Find teams needings players
 							</Header>
+							<Divider hidden /> 
+							<Divider hidden />
 							<GameTable games={games}/>
 						</Grid.Row>
 						<Grid.Row>
@@ -187,9 +190,13 @@ class Main extends React.Component {
 							</Dimmer>
 
 							<Header style={{width: '100%'}} size='huge' textAlign='center'>
-								Checkout our newest available free agents!
+								Check out our newest available free agents!
 							</Header>
+							<Divider hidden /> 
+							<Divider hidden /> 
+
 							<PlayerList players={players}/>
+							<Divider hidden /> 
 						</Grid.Row>
 					</Grid>
 				</Container>
