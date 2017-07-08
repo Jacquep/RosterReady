@@ -106,7 +106,7 @@ const PlayerDashboard = () => (
 						<PlayerCard player={mockPlayers[0]}/>
 					</Grid.Column>			
 					<Grid.Column width={10}>
-						<Header style={{width: '100%'}} size='huge' textAlign='center'>Pick a Game</Header>
+						<Header style={{width: '100%'}} size='huge' textAlign='center'>Browse Upcoming Roster Needs</Header>
 						<GameTable games={mockGames}/>
 					</Grid.Column>
 				</Grid.Row>

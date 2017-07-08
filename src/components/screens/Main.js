@@ -77,8 +77,8 @@ const mockGames = [
 	}
 ]
 
-const mockPlayers = [1,2,3,4,5,6,7,8,9,10].map(num => {
-	return {
+const mockPlayers = [
+	{
 		name: 'Sam',
 		phone: '',
 		email: '',
@@ -86,9 +86,101 @@ const mockPlayers = [1,2,3,4,5,6,7,8,9,10].map(num => {
 		sport: 'Softball',
 		gender: '',
 		ready: true,
-		avatar: `./images/testav${(num % 7) + 1}.png`
-	}
-})
+		avatar: `./images/testav1.png`
+	},
+	{
+		name: 'Lizzy',
+		phone: '',
+		email: '',
+		username: '',
+		sport: 'Soccer',
+		gender: '',
+		ready: true,
+		avatar: `./images/testav2.png`
+	},
+	{
+		name: 'Jamie',
+		phone: '',
+		email: '',
+		username: '',
+		sport: 'Volleyball',
+		gender: '',
+		ready: true,
+		avatar: `./images/testav3.png`
+	},
+	{
+		name: 'Jason',
+		phone: '',
+		email: '',
+		username: '',
+		sport: 'Football',
+		gender: '',
+		ready: true,
+		avatar: `./images/testav4.png`
+	},
+	{
+		name: 'Max',
+		phone: '',
+		email: '',
+		username: '',
+		sport: 'Basketball',
+		gender: '',
+		ready: true,
+		avatar: `./images/testav5.png`
+	},
+	{
+		name: 'Bobby',
+		phone: '',
+		email: '',
+		username: '',
+		sport: 'Softball',
+		gender: '',
+		ready: true,
+		avatar: `./images/testav1.png`
+	},
+	{
+		name: 'Annie',
+		phone: '',
+		email: '',
+		username: '',
+		sport: 'Volleyball',
+		gender: '',
+		ready: true,
+		avatar: `./images/testav2.png`
+	},
+	{
+		name: 'Tina',
+		phone: '',
+		email: '',
+		username: '',
+		sport: 'Football',
+		gender: '',
+		ready: true,
+		avatar: `./images/testav3.png`
+	},
+	{
+		name: 'Manny',
+		phone: '',
+		email: '',
+		username: '',
+		sport: 'Volleyball',
+		gender: '',
+		ready: true,
+		avatar: `./images/testav4.png`
+	},
+	{
+		name: 'Chris',
+		phone: '',
+		email: '',
+		username: '',
+		sport: 'Basketball',
+		gender: '',
+		ready: true,
+		avatar: `./images/testav5.png`
+	},
+	]
+
+
 
 // This is the main component. 
 class Main extends React.Component {
@@ -178,7 +270,7 @@ class Main extends React.Component {
 							</Dimmer>
 
 							<Header style={{width: '100%'}} size='huge' textAlign='center'>
-								Find teams needings players
+								Find Teams Needings Players
 							</Header>
 							<Divider hidden /> 
 							<Divider hidden />
