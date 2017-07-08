@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Button, Divider, Form, Grid } from 'semantic-ui-react'
+// import { Link } from 'react-router-dom'
+import { Button, Divider, Form } from 'semantic-ui-react'
 import API from '../utils/API'
+
       
 class PlayerForm extends React.Component {
 
@@ -9,17 +10,49 @@ class PlayerForm extends React.Component {
     super(props)
 
     this.state = {
-      name: 'rre-',
+      name: '',
       phone: '',
       email: '',
       username: '',
       gender: '',
-      sport: '',
-      ready: true,
+      sport: ''
     }
   }
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
+
+  handleSubmit = () => {
+
+ 
+
+    const name = this.state.name;
+    const phone = this.state.phone;
+    const email = this.state.email;
+    const username = this.state.username;
+    const gender = this.state.gender;
+    const sport = this.state.sport;
+    
+    API.addPlayer(name, phone, email, username, gender, sport)
+      .then(API.addPlayer)
+      .catch((err) => {
+        console.error('Error adding Player', err)
+      })
+
+    this.setState({
+      name: '',
+      phone: '',
+      email: '',
+      username: '',
+      gender: '',
+      sport: ''
+      
+    })
+
+    console.log(this.state);
+
+   
+  }
   
 
   render() {
@@ -34,10 +67,10 @@ class PlayerForm extends React.Component {
 
     return (
       <Form onSubmit={this.handleSubmit} style={{width: '50%', margin: 'auto'}}>
-        <Form.Input value={name} name='Name' label='Name' control='input' placeholder='Name' />     
-        <Form.Input value={phone} name='Phone' label='Phone' placeholder='Phone' />
-        <Form.Input value={email} name='Email' label='Email' placeholder='Email' />
-        <Form.Input value={username} name='Username' label='Username' placeholder='Username' />
+        <Form.Input value={name} name='name' label='Name' placeholder='Name'  onChange={this.handleChange} />     
+        <Form.Input value={phone} name='phone' label='Phone' placeholder='Phone' onChange={this.handleChange} />
+        <Form.Input value={email} name='email' label='Email' placeholder='Email' onChange={this.handleChange}/>
+        <Form.Input value={username} name='username' label='Username' placeholder='Username' onChange={this.handleChange}/>
 
 
 
@@ -60,7 +93,9 @@ class PlayerForm extends React.Component {
 
         <Divider hidden />
 
-        <Form.Button content='Submit' />
+      
+         <Button content='Submit'  />
+      
       </Form>
     )
 

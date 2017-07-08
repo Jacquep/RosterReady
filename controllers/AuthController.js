@@ -19,9 +19,11 @@ userController.event = function(req, res) {
 
 // Go to registration page
 userController.register = function(req, res) {
+  console.log("I'm here")
   var rtype = req.param('id')
   console.log("registration type = " + rtype)
   res.render('register', { rtype : rtype});
+
 };
 
 // Go to registration page
@@ -38,21 +40,7 @@ userController.doRegister = function(req, res) {
   User.register(new User({
     
     name: req.body.name,
-    lname: req.body.lname,
-    username : req.body.username,
-    email: req.body.email,
-    phone: req.body.phone,
-    usertype: req.body.usertype,
-    baseball: req.body.baseball,
-    basketball: req.body.basketball,
-    soccer: req.body.soccer,
-    vollyball: req.body.vollyball,
-    football: req.body.football,
-    teamname: req.body.teamname,
-    gender: req.body.gender,
-    status: req.body.status,
-    teamcat: req.body.teamcat,
-    location: req.body.location
+  
    
               }), req.body.password, function(err, user) {
 

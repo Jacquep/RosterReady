@@ -8,7 +8,6 @@
 // import routes from "./config/routes";
 // //cut below here
 
-
 import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Main from './components/screens/Main'

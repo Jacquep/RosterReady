@@ -9,22 +9,34 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+var app = express();
+// var routes = require("./utils/routes");
+
+// Set up a default port, configure mongoose, configure our middleware
+var PORT = process.env.PORT || 8080;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// app.use("/", routes);
+
+
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/roster-ready')
-  .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
+mongoose.createConnection('mongodb://localhost/roster-ready')
+  // .then(() =>  console.log('connection succesful'))
+  // .catch((err) => console.error(err));
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var PORT = process.env.PORT || 8080;
+
 
 var app = express();
 
 //Kayla modified this code below here===============
 
 //required schemas
-var User = require('./models/User');
+// var User = require('./models/User');
 var Event = require('./models/Event');
 
 //==============
@@ -58,26 +70,27 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// // catch 404 and forward to error handler
+// app.use(function(req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+// // error handler
+// app.use(function(err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+//   // render the error page
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
 // Start the server
-app.listen(PORT, function() {
-  console.log("Now listening on port %s! Visit localhost:%s in your browser.", PORT, PORT);
-});
+// app.listen(PORT, function() {
+//   console.log("Now listening on port %s! Visit localhost:%s in your browser.", PORT, PORT);
+// });
 
 module.exports = app;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Divider, Form, Grid } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import API from '../utils/API'
       
 class TeamForm extends React.Component {
@@ -8,102 +8,71 @@ class TeamForm extends React.Component {
     super(props);
     this.state = {
       teamLeader: '',
-      sport: '',
-      TeamName: '',
+      teamName: '',
       phone:'',
-      email: ''
-    };
-      this.handleChange = this.handleChange.bind(this);
-      this.handleButtonClick = this.handleButtonClick.bind(this); 
+      email: '',
+      sport: ''
+    };     
   }
+    
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
-  state ={}
 
-  handleChange = (e, obj) => this.setState({ value: obj.value })
+  handleSubmit = () => {
 
-  //sending info to our API
-  handleButtonClick() {
-    const newTeam = this.state.inputValue;
-    API.addTeam(newTeam).then(this.props.getTeam);
-    this.setState({ 
+    const teamLeader = this.state.teamLeader;
+    const teamName = this.state.teamName;
+    const phone = this.state.phone;
+    const email = this.state.email
+    const sport = this.state.sport;
+    
+    
+    API.addTeam(teamLeader, teamName, phone, email, sport)
+      .then(API.getTeam)
+      .catch((err) => {
+        console.error('Error adding Game', err)
+      })
+
+    this.setState({
       teamLeader: '',
-      sport: '',
-      TeamName: '',
-      phone:'',
-      email: ''
-    });
+      teamName: '',
+      phone: '',
+      email: '',
+      sport: '' 
+      
+    })
   }
+
+
     render() {
-      const value = this.state.value
+      const teamLeader = this.state.teamLeader;
+      const teamName = this.state.teamName;
+      const phone = this.state.phone;
+      const email = this.state.email;
+      const sport = this.state.sport;
 
       return (
-        <Grid centered columns={2}>
-          <Grid.Row>
-            <Grid.Column>
-              <Form>
-                <Form.Group widths='equal'>
-                  <Form.Input label='Team Captain' control='input' placeholder='Team Captain' onChange={this.handleChange} value={this.state.inputValue}/>
-                </Form.Group>
-              </Form>
-           </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Form>
-                <Form.Group widths='equal'> 
-                  <Form.Input label='Sport' control='input' placeholder='Sport' onChange={this.handleChange} value={this.state.inputValue}/>
-                </Form.Group>
-              </Form>
-           </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Form>
-                <Form.Group widths='equal'>
-                  <Form.Input label='Team Name' control='input' placeholder='Team Name' onChange={this.handleChange} value={this.state.inputValue}/>
-                </Form.Group>
-              </Form>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Form>
-                <Form.Group widths='equal'> 
-                  <Form.Input label='Phone' control='input' placeholder='Phone' onChange={this.handleChange} value={this.state.inputValue}/>
-                </Form.Group>
-              </Form>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Form>
-                <Form.Group widths='equal'>
-                  <Form.Input label='Email' control='input' placeholder='Email' onChange={this.handleChange} value={this.state.inputValue}/>
-                </Form.Group>
-              </Form>
-           </Grid.Column>
-          </Grid.Row>
-
+        
+      <Form onSubmit={this.handleSubmit}>
+                  
+        <Form.Input value={teamLeader} name='teamLeader' label='Team Captain' placeholder='Team Captain' onChange={this.handleChange}/>
+        <Form.Input value={teamName} name='teamName' label='team Name' placeholder='Team Name' onChange={this.handleChange} />
+        <Form.Input value={phone} name='phone' label='Phone' placeholder='Phone' onChange={this.handleChange} />
+        <Form.Input value={email} name='email' label='Email'placeholder='Email' onChange={this.handleChange} />
+           
+        <Form.Group>
         <label>Sport</label>
-        <Form.Radio label='Basketball' value='Basketball' checked={value === 'Basketball'} onChange={this.handleChange} />
-        <Form.Radio label='Baseball' value='Softball' checked={value === 'Baseball'} onChange={this.handleChange} />
-        <Form.Radio label='Soccer' value='Soccer' checked={value === 'Soccer'} onChange={this.handleChange} />
-        <Form.Radio label='Volleyball' value='Volleyball' checked={value === 'Volleyball'} onChange={this.handleChange} />
-        <Form.Radio label='Football' value='Football' checked={value === 'Football'} onChange={this.handleChange} />
-      
-        <Grid.Row>
-          <Grid.Column>
-            <Form>
-              <Form.Group>
-                <Link to='/TeamDashboard'>
-                  <Button type='submit'>Submit</Button>
-                  <Divider hidden />
-                </Link>
-              </Form.Group>
-            </Form>
-          </Grid.Column>
-        </Grid.Row>         
-      </Grid>
+        <Form.Radio label='Basketball' value={sport} checked={sport === 'Basketball'} onChange={this.handleChange} />
+        <Form.Radio label='Baseball' value={sport}  checked={sport === 'Baseball'} onChange={this.handleChange} />
+        <Form.Radio label='Soccer' value={sport}  checked={sport=== 'Soccer'} onChange={this.handleChange} />
+        <Form.Radio label='Volleyball' value={sport}  checked={sport === 'Volleyball'} onChange={this.handleChange} />
+        <Form.Radio label='Football' value={sport}  checked={sport === 'Football'} onChange={this.handleChange} />
+        </Form.Group>
+
+        <Link to='/team'>
+          <Button content='Submit' role='form' />
+        </Link>
+      </Form>
     )
   }
 }

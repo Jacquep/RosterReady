@@ -25,9 +25,6 @@ userController.registertype = function(req, res) {
 userController.doRegister = function(req, res) {
 
      console.log(req.body)
-
-  
-
   
 
   User.register(new User({

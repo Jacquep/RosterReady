@@ -1,8 +1,8 @@
 // Include React 
 import React from 'react'
 
-import { Link } from 'react-router-dom'
-import { Container, Grid, Header, Segment, Dimmer, Loader } from 'semantic-ui-react'
+// import { Link } from 'react-router-dom'
+import { Container, Grid, Header, Dimmer, Loader } from 'semantic-ui-react'
 
 
 import PageHeader from '../Header'
