@@ -12,6 +12,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Main from './components/screens/Main'
 import Register from './components/screens/Register'
+import RegisterTeam from './components/screens/RegisterTeam'
 import PlayerDashboard from './components/screens/PlayerDashboard'
 import TeamDashboard from './components/screens/TeamDashboard'
 
@@ -22,7 +23,8 @@ class App extends React.Component {
       <Router>
         <div>
           <Route exact path='/' component={Main} />
-          <Route path='/register' component={Register} />
+          <Route path='/registerplayer' component={Register} />
+          <Route path='/registerteam' component={RegisterTeam} />
           <Route path='/player' component={PlayerDashboard} />
           <Route path='/team' component={TeamDashboard} />
         </div>

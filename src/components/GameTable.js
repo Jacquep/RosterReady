@@ -31,7 +31,8 @@ const GameTable = (props) => (
 					<Table.HeaderCell>Sport</Table.HeaderCell>
 					<Table.HeaderCell>Roster Needs</Table.HeaderCell>
 					<Table.HeaderCell>Location</Table.HeaderCell>
-					<Table.HeaderCell>Team Name</Table.HeaderCell>		
+					<Table.HeaderCell>Team Name</Table.HeaderCell>	
+					<Table.HeaderCell textAlign='center'>Contact</Table.HeaderCell>	
 	            </Table.Row>
         	</Table.Header>
 	      	<Table.Body>

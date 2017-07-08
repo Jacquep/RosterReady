@@ -17,10 +17,7 @@ const Footer = () => {
   		  inverted
       >
         <Container>
-          <Menu.Item header>Links</Menu.Item>
-          <Menu.Item name='aboutUs'>About</Menu.Item>
-          <Menu.Item name='contactUs'>Contact Us</Menu.Item>
-          <Menu.Item name='dashboard'>My Dashboard</Menu.Item>
+          
         </Container>
       </Menu>
       <Menu

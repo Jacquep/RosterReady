@@ -1,15 +1,12 @@
 import React from 'react'
-
 // import { Link } from 'react-router-dom'
-import { Grid, Container, Header } from 'semantic-ui-react'
+import { Divider, Grid, Container, Header } from 'semantic-ui-react'
 
 import PageHeader from '../Header'
 import TeamCard from '../TeamCard'
 import GameTable from '../GameTable'
 import Footer from '../Footer'
-
-
-
+import GameForm from '../GameForm'
 
 const mockGames = [
 	{
@@ -79,11 +76,11 @@ const mockGames = [
 
 const mockTeams = [1,2,3,4,5,6,7,8,9,10].map(num => {
 	return {
-		name: 'Joe',
+		name: 'Team Sizzle',
 		phone: '',
 		email: '',
 		username: '',
-		sport: 'Baseball',
+		sport: 'Volleyball',
 		gender: '',
 		ready: true,
 		avatar: `https://react.semantic-ui.com/assets/images/avatar/large/matthew.png`
@@ -99,6 +96,9 @@ const TeamDashboard = () => (
 		flexDirection: 'column'
 	}}>
 		<PageHeader />
+		<Divider hidden /> 
+		<Divider hidden /> 
+		<Divider hidden /> 
 		<Container style={{flex: 1}}>
 			<Grid>
 				<Grid.Row>
@@ -108,6 +108,8 @@ const TeamDashboard = () => (
 					<Grid.Column width={10}>
 						<Header style={{width: '100%'}} size='huge' textAlign='center'>Your Games</Header>
 						<GameTable games={mockGames}/>
+						<Header style={{width: '100%'}} size='huge' textAlign='center'>Add Game</Header>
+						<GameForm />
 					</Grid.Column>
 				</Grid.Row>
 			</Grid>

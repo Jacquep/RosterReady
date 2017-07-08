@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table } from 'semantic-ui-react'
+import ContactTeam from './ContactTeam' 
 
 const GameTableRow = (props) => (
     <Table.Row>
@@ -9,7 +10,7 @@ const GameTableRow = (props) => (
 		<Table.Cell>{props.game.rosterNeeds}</Table.Cell>
 		<Table.Cell>{props.game.location}</Table.Cell>
 		<Table.Cell>{props.game.teamName}</Table.Cell>
-		<Table.Cell>{props.game.contact}</Table.Cell>
+		<Table.Cell><ContactTeam /></Table.Cell>
     </Table.Row>
 )
 

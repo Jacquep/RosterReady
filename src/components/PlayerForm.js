@@ -1,6 +1,7 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
-import { Button, Divider, Form } from 'semantic-ui-react'
+//Jeremee re-abled Link for presentation and used it below for the submit button
+import { Link } from 'react-router-dom'
+import { Button, Divider, Form, Grid } from 'semantic-ui-react'
 import API from '../utils/API'
 
       
@@ -66,21 +67,21 @@ class PlayerForm extends React.Component {
    
 
     return (
+      
       <Form onSubmit={this.handleSubmit} style={{width: '50%', margin: 'auto'}}>
+        <Divider hidden />
         <Form.Input value={name} name='name' label='Name' placeholder='Name'  onChange={this.handleChange} />     
         <Form.Input value={phone} name='phone' label='Phone' placeholder='Phone' onChange={this.handleChange} />
         <Form.Input value={email} name='email' label='Email' placeholder='Email' onChange={this.handleChange}/>
         <Form.Input value={username} name='username' label='Username' placeholder='Username' onChange={this.handleChange}/>
 
-
-
-        <Form.Group>
+        <Form.Group grouped>
           <label>Gender</label>
           <Form.Radio name='gender' label='Male' value='male' checked={gender === 'male'} onChange={this.handleChange} />
           <Form.Radio name='gender' label='Female' value='female' checked={gender === 'female'} onChange={this.handleChange} />
         </Form.Group>
 
-        <Form.Group>
+        <Form.Group grouped>
           <label>Sport</label>
           <Form.Radio name='sport' label='Basketball' value='Basketball' checked={sport === 'Basketball'} onChange={this.handleChange} />
           <Form.Radio name='sport' label='Baseball' value='Baseball' checked={sport === 'Baseball'} onChange={this.handleChange} />
@@ -89,12 +90,11 @@ class PlayerForm extends React.Component {
           <Form.Radio name='sport' label='Football' value='Football' checked={sport === 'Football'} onChange={this.handleChange} />
         </Form.Group>
 
-       
-
         <Divider hidden />
 
-      
-         <Button content='Submit'  />
+        <Link to='/player'>
+          <Button content='Submit' color='teal' role='form' />
+        </Link>
       
       </Form>
     )

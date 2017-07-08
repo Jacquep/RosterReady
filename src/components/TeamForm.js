@@ -1,6 +1,7 @@
 import React from 'react'
+//Jeremee re-abled Link for presentation and used it below for the submit button
 import { Link } from 'react-router-dom'
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Divider, Form } from 'semantic-ui-react'
 import API from '../utils/API'
       
 class TeamForm extends React.Component {
@@ -53,24 +54,25 @@ class TeamForm extends React.Component {
 
       return (
         
-      <Form onSubmit={this.handleSubmit}>
-                  
+      <Form onSubmit={this.handleSubmit} style={{width: '50%', margin: 'auto'}}>
+        <Divider hidden />          
         <Form.Input value={teamLeader} name='teamLeader' label='Team Captain' placeholder='Team Captain' onChange={this.handleChange}/>
-        <Form.Input value={teamName} name='teamName' label='team Name' placeholder='Team Name' onChange={this.handleChange} />
+        <Form.Input value={teamName} name='teamName' label='Team Name' placeholder='Team Name' onChange={this.handleChange} />
         <Form.Input value={phone} name='phone' label='Phone' placeholder='Phone' onChange={this.handleChange} />
         <Form.Input value={email} name='email' label='Email'placeholder='Email' onChange={this.handleChange} />
+        <Form.Input name='Username' label='Username' placeholder='Username' />
            
-        <Form.Group>
-        <label>Sport</label>
-        <Form.Radio label='Basketball' value={sport} checked={sport === 'Basketball'} onChange={this.handleChange} />
-        <Form.Radio label='Baseball' value={sport}  checked={sport === 'Baseball'} onChange={this.handleChange} />
-        <Form.Radio label='Soccer' value={sport}  checked={sport=== 'Soccer'} onChange={this.handleChange} />
-        <Form.Radio label='Volleyball' value={sport}  checked={sport === 'Volleyball'} onChange={this.handleChange} />
-        <Form.Radio label='Football' value={sport}  checked={sport === 'Football'} onChange={this.handleChange} />
+        <Form.Group grouped>
+          <label>Sport</label>
+          <Form.Radio label='Basketball' value={sport} checked={sport === 'Basketball'} onChange={this.handleChange} />
+          <Form.Radio label='Baseball' value={sport}  checked={sport === 'Baseball'} onChange={this.handleChange} />
+          <Form.Radio label='Soccer' value={sport}  checked={sport=== 'Soccer'} onChange={this.handleChange} />
+          <Form.Radio label='Volleyball' value={sport}  checked={sport === 'Volleyball'} onChange={this.handleChange} />
+          <Form.Radio label='Football' value={sport}  checked={sport === 'Football'} onChange={this.handleChange} />
         </Form.Group>
 
         <Link to='/team'>
-          <Button content='Submit' role='form' />
+          <Button content='Submit' color='teal' role='form' />
         </Link>
       </Form>
     )
